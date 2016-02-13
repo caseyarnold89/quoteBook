@@ -10,6 +10,10 @@ angular.module("quoteBook").service("dataService", function() {
         { text: 'What even is a jQuery?', author: 'Tyler S. McGinnis'}
     ];
    
+//    this.toggleEntry = function() {
+//        if ()
+//    }
+   
    this.getData = function() {
        return quotes;
    };

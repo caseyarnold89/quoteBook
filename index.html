@@ -9,12 +9,12 @@
             {{quote.text}} <br> {{quote.author}} <br> <br>
         </div>
         
-        <button ng-click="showAddQuote = !showAddQuote">Add Quote</button>
-        <button ng-click="showRemoveQuote = !showRemoveQuote">Remove Quote</button>
-        <button ng-click="showFilterQuotes = !showFilterQuotes">Remove Quote</button>
+        <button ng-click="click.add()">Add Quote</button>
+        <button ng-click="click.remove()">Remove Quote</button>
+        <button ng-click="click.filter()">Filter Quotes</button>
         <br>
         <br>
-        <div class="addQuote" ng-show="showAddQuote" ng-init="showAddQuote=true">
+        <div class="addQuote" ng-show="showAddQuote">
             Quote Text:<input type="text" ng-model="addInputQ">Author:<input type="text" ng-model="addInputA">
             <button ng-click="addQuote(addInputQ, addInputA)">Add Quote</button>
         </div>

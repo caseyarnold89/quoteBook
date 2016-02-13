@@ -15,4 +15,22 @@ app.controller("mainCtrl", function($scope, dataService) {
         $scope.removeInput = "";
     };
     
+    $scope.click = {
+        add: function(add) {
+            $scope.showAddQuote = !$scope.showAddQuote;
+            $scope.showRemoveQuote = false;
+            $scope.showFilterQuotes = false;
+        },
+        remove: function() {
+            $scope.showRemoveQuote = !$scope.showRemoveQuote;
+            $scope.showAddQuote = false;
+            $scope.showFilterQuotes = false;
+        },
+        filter: function() {
+            $scope.showFilterQuotes = !$scope.showFilterQuotes;
+            $scope.showAddQuote = false;
+            $scope.showRemoveQuote = false;            
+        }
+    }
+    
 });
