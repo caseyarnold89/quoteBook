@@ -5,13 +5,30 @@
     </head>
     <body ng-controller="mainCtrl">
         
-        <div ng-repeat = "quote in quotes">
+        <div ng-repeat = "quote in quotes | filter: filterInput">
             {{quote.text}} <br> {{quote.author}} <br> <br>
         </div>
         
-        Quote Text:<input type="text" ng-model="addInputQ">Author:<input type="text" ng-model="addInputA"><button ng-click="addQuote(addInputQ, addInputA)">Add Quote</button><br>
-        <input type="text" ng-model="removeInput"><button ng-click="removeQuote(removeInput)">Remove Quote</button><br>
-        <input type="text" ng-model="filterInput"><button ng-click="filterQuotes(filterInput)">Filter Quotes</button>
+        <button ng-click="showAddQuote = !showAddQuote">Add Quote</button>
+        <button ng-click="showRemoveQuote = !showRemoveQuote">Remove Quote</button>
+        <button ng-click="showFilterQuotes = !showFilterQuotes">Remove Quote</button>
+        <br>
+        <br>
+        <div class="addQuote" ng-show="showAddQuote" ng-init="showAddQuote=true">
+            Quote Text:<input type="text" ng-model="addInputQ">Author:<input type="text" ng-model="addInputA">
+            <button ng-click="addQuote(addInputQ, addInputA)">Add Quote</button>
+        </div>
+        
+        <div class="removeQuote" ng-show="showRemoveQuote">
+                    <input type="text" ng-model="removeInput">
+        <button ng-click="removeQuote(removeInput)">Remove Quote</button>
+        </div>
+        
+        <div class="filterQuotes" ng-show="showFilterQuotes">
+            <input type="text" ng-model="filterInput">
+            <button ng-click="filterQuotes(filterInput)">Filter Quotes</button>
+        </div>
+
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js""></script>
         <script src="js/app.js"></script>

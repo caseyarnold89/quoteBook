@@ -14,6 +14,5 @@ app.controller("mainCtrl", function($scope, dataService) {
         dataService.removeData(removeInput);
         $scope.removeInput = "";
     };
-    // $scope.filterQuotes = ;
     
 });
